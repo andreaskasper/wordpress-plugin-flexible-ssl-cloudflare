@@ -4,16 +4,15 @@
     "download_url": "https:\/\/raw.githubusercontent.com\/andreaskasper\/wordpress-plugin-flexible-ssl-cloudflare\/main\/dist\/goo1-cloudflare-flexible-ssl.zip",
     "homepage": "https:\/\/github.com\/andreaskasper\/",
     "requires": "4.5",
-    "tested": "5.5.3",
-    "last_updated": "2023-07-12 16:40:42",
+    "tested": "6.3.1",
+    "last_updated": "2023-09-18 15:28:00",
     "upgrade_notice": "Dies ist das erste Upgrade. Es kommen erste Funktionen hinzu.",
     "author": "Andreas Kasper",
     "author_homepage": "https:\/\/goo1.de\/",
     "sections": {
-        "description": "<p><\/p>",
+        "description": "<p>If you are using a Wordpress installation behind a Cloudflare CDN with Flexible SSL you can run into several errors.<\/p><p>This plugin can fix these errors.</p>",
         "installation": "Bitte kontaktieren Sie Andreas Kasper f\u00fcr die Installation. Dieses Plugin ist eine personalisierte Anpassung und nicht im offiziellen Wordpress-Pluginstore verf\u00fcgbar.",
-        "changelog": "<h2>Changelog<\/h2><p>Erster Checkin, alle Funktionen werden initial eingebaut.<\/p>",
-        "Kontakt_Andreas": ""
+        "changelog": "<h2>Changelog<\/h2><p>Erster Checkin, alle Funktionen werden initial eingebaut.<\/p>"
     },
     "icons": {
         "1x": "https:\/\/raw.githubusercontent.com\/andreaskasper\/wordpress-plugin-flexible-ssl-cloudflare\/main\/dist\/logo_128.png",
