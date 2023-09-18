@@ -27,7 +27,7 @@ foreach ($files as $name => $file)
         $relativePath = str_replace(DIRECTORY_SEPARATOR, "/", substr($filePath, strlen($rootPath)));
 
         // Add current file to archive
-        $zip->addFile($filePath, $id."/".$relativePath);
+        $zip->addFile($filePath, "cloudflare-flexible-ssl/".$relativePath);
     }
 }
 
@@ -36,7 +36,7 @@ $zip->close();
 
 if (!file_exists(__DIR__."/dist/cloudflare-flexible-ssl.zip")) die("[\033[31mERROR\033[0m] File not created".PHP_EOL);
 echo("[\033[32mDONE\033[0m] zip file created".PHP_EOL);
-echo("[*] Filesize: ".filesize(__DIR__."/".$id.".zip").PHP_EOL);
-echo("[*] Modified: ".date("Y-m-d H:i:s",filemtime(__DIR__."/".$id.".zip")).PHP_EOL);
+echo("[*] Filesize: ".filesize(__DIR__."/dist/cloudflare-flexible-ssl.zip").PHP_EOL);
+echo("[*] Modified: ".date("Y-m-d H:i:s",filemtime(__DIR__."/dist/cloudflare-flexible-ssl.zip")).PHP_EOL);
 echo("[*] finished ".date("Y-m-d H:i:s").PHP_EOL);
 
