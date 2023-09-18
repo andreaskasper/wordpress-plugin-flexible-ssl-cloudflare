@@ -4,7 +4,7 @@
  * Plugin URI: https://github.com/AndreasKasper/wordpress-plugin-flexible-ssl-cloudflare
  * Description: Fix For CloudFlare Flexible SSL Redirect Loop For WordPress
  * Version: 1.0.1
- * Text Domain: cloudflare-flexible-ssl
+ * Text Domain: goo1-cloudflare-flexible-ssl
  * Author: Andreas Kasper
  * Original Author: One Dollar Plugin
  * Author URI: https://github.com/AndreasKasper/
@@ -152,5 +152,5 @@ if (!class_exists("Puc_v4_Factory")) {
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
     "https://raw.githubusercontent.com/andreaskasper/wordpress-plugin-flexible-ssl-cloudflare/dist/updater.json",
     __FILE__, //Full path to the main plugin file or functions.php.
-    'cloudflare-flexible-ssl'
+    'goo1-cloudflare-flexible-ssl'
 );

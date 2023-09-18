@@ -4,11 +4,15 @@ $id = $argv[1];
 if (!file_exists("/app/src/".$id) AND file_exists("/app/src/goo1-custom-".$id)) $id = "goo1-custom-".$id;
 if (!file_exists("/app/src/".$id)) die("[\033[31mERROR\033[0m] Unknown Plugin name or not found ".$id.PHP_EOL);*/
 
+$plugin_name = "goo1-cloudflare-flexible-ssl";
+
+
+$file_zip = __DIR__."/dist/".$plugin_name.".zip";
 $rootPath = __DIR__."/src/";
 
 // Initialize archive object
 $zip = new ZipArchive();
-$zip->open(__DIR__."/dist/cloudflare-flexible-ssl.zip", ZipArchive::CREATE | ZipArchive::OVERWRITE);
+$zip->open($file_zip , ZipArchive::CREATE | ZipArchive::OVERWRITE);
 
 // Create recursive directory iterator
 /** @var SplFileInfo[] $files */
@@ -27,16 +31,16 @@ foreach ($files as $name => $file)
         $relativePath = str_replace(DIRECTORY_SEPARATOR, "/", substr($filePath, strlen($rootPath)));
 
         // Add current file to archive
-        $zip->addFile($filePath, "cloudflare-flexible-ssl/".$relativePath);
+        $zip->addFile($filePath, $plugin_name."/".$relativePath);
     }
 }
 
 // Zip archive will be created only after closing object
 $zip->close();
 
-if (!file_exists(__DIR__."/dist/cloudflare-flexible-ssl.zip")) die("[\033[31mERROR\033[0m] File not created".PHP_EOL);
+if (!file_exists($file_zip)) die("[\033[31mERROR\033[0m] File not created".PHP_EOL);
 echo("[\033[32mDONE\033[0m] zip file created".PHP_EOL);
-echo("[*] Filesize: ".filesize(__DIR__."/dist/cloudflare-flexible-ssl.zip").PHP_EOL);
-echo("[*] Modified: ".date("Y-m-d H:i:s",filemtime(__DIR__."/dist/cloudflare-flexible-ssl.zip")).PHP_EOL);
+echo("[*] Filesize: ".filesize($file_zip).PHP_EOL);
+echo("[*] Modified: ".date("Y-m-d H:i:s",filemtime($file_zip)).PHP_EOL);
 echo("[*] finished ".date("Y-m-d H:i:s").PHP_EOL);
 
